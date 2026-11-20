@@ -2,54 +2,50 @@ import unittest
 from calculator import *
 
 class TestCalculator(unittest.TestCase):
-    ######### Partner 2
-    # def test_add(self): # 3 assertions
-    #     fill in code
 
-    # def test_subtract(self): # 3 assertions
-    #     fill in code
-    # ##########################
+import math
 
-    ######## Partner 1
-    # def test_multiply(self): # 3 assertions
-    #     fill in code
+def square_root(a):
+    if a < 0:
+        raise ValueError("Cannot take the square root of a negative number.")
+    return math.sqrt(a)
 
-    # def test_divide(self): # 3 assertions
-    #     fill in code
-    # ##########################
+def hypotenuse(a, b):
+    return math.hypot(a, b)
 
-    ######## Partner 2
-    # def test_divide_by_zero(self): # 1 assertion
-    #     # call division function inside, example:
-    #     # with self.assertRaises(<INSERT_ERROR_TYPE>):
-    #     #     div(0, 5)
-    #     fill in code
+def add(a, b):
+    return a + b
 
-    # def test_logarithm(self): # 3 assertions
-    #     fill in code
+def sub(a, b):
+    return a - b
 
-    # def test_log_invalid_base(self): # 1 assertion
-    #     # use same technique from test_divide_by_zero
-    #     fill in code
-    # ##########################
-    
-    ######## Partner 1
-    # def test_log_invalid_argument(self): # 1 assertion
-    #     # call log function inside, example:
-    #     # with self.assertRaises(<INSERT_ERROR_TYPE>):
-    #     #     logarithm(0, 5)
-    #     fill in code
+def mul(a, b):
+    return a * b
 
-    # def test_hypotenuse(self): # 3 assertions
-    #     fill in code
+def div(a, b):
+    if a == 0:
+        raise ZeroDivisionError("Cannot divide by zero.")
+    return b / a
 
-    # def test_sqrt(self): # 3 assertions
-    #     # Test for invalid argument, example:
-    #     # with self.assertRaises(<INSERT_ERROR_TYPE>):
-    #     #    square_root(NUM)
-    #     # Test basic function
-    #     fill in code
-    ##########################
+def log(a ,b):
+    if a <= 0 or a == 1 or b <= 0:
+        raise ValueError("Invalid base or argument for logarithm.")
+    return math.log(b , a)
+
+def exp(a, b):
+    return a ** b
+
+def subtract(a, b):
+    return sub(a , b)
+
+def multiply(a, b):
+    return mul(a, b)
+
+def logarithm(a, b):
+    return log(a, b)
+
+def eponent(a, b):
+    return exp(a , b)
 
 # Do not touch this
 if __name__ == "__main__":
