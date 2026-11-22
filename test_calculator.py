@@ -1,57 +1,36 @@
-#https://github.com/mefr101/lab10-KL-SP
+# https://github.com/mefr101/lab10-KL-SP
+# Partner 1: KL
+# Partner 2: SP
+
 import unittest
 from calculator import *
 
+
 class TestCalculator(unittest.TestCase):
-    def test_add(self):    
+
+    def test_add(self):
         self.assertEqual(add(2, 3), 5)
         self.assertEqual(add(-1, 5), 4)
         self.assertEqual(add(-4, -6), -10)
 
-import math
+    def test_subtract(self):
+        self.assertEqual(sub(10, 4), 6)
+        self.assertEqual(sub(-5, -3), -2)
+        self.assertEqual(sub(0, 7), -7)
 
-def square_root(a):
-    if a < 0:
-        raise ValueError("Cannot take the square root of a negative number.")
-    return math.sqrt(a)
+    def test_divide_by_zero(self):
+        with self.assertRaises(ZeroDivisionError):
+            div(0, 5)
 
-def hypotenuse(a, b):
-    return math.hypot(a, b)
+    def test_logarithm(self):
+        self.assertAlmostEqual(log(2, 8), 3.0)
+        self.assertAlmostEqual(log(10, 100), 2.0)
+        self.assertAlmostEqual(log(5, 1), 0.0)
 
-def add(a, b):
-    return a + b
+    def test_log_invalid_base(self):
+        with self.assertRaises(ValueError):
+            log(1, 10)
 
-def sub(a, b):
-    return a - b
 
-def mul(a, b):
-    return a * b
-
-def div(a, b):
-    if a == 0:
-        raise ZeroDivisionError("Cannot divide by zero.")
-    return b / a
-
-def log(a ,b):
-    if a <= 0 or a == 1 or b <= 0:
-        raise ValueError("Invalid base or argument for logarithm.")
-    return math.log(b , a)
-
-def exp(a, b):
-    return a ** b
-
-def subtract(a, b):
-    return sub(a , b)
-
-def multiply(a, b):
-    return mul(a, b)
-
-def logarithm(a, b):
-    return log(a, b)
-
-def eponent(a, b):
-    return exp(a , b)
-
-# Do not touch this
 if __name__ == "__main__":
     unittest.main()
