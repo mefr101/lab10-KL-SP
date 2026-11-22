@@ -1,6 +1,6 @@
 # https://github.com/mefr101/lab10-KL-SP
-# Partner 1: KL
-# Partner 2: SP
+# Partner 1: Kanu Lala
+# Partner 2: Stephen Passetti
 
 """
 calculator.py
