@@ -1,4 +1,5 @@
 #https://github.com/mefr101/lab10-KL-SP
+"""
 calculator.py
 - Defines functions used to create a simple calculator
 
